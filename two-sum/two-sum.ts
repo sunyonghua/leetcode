@@ -16,3 +16,15 @@ const twoSum = function (nums: number[], target: number): number[] {
     }
   }
 };
+
+const twoSum2 = (nums: number[], target: number): void => {
+  let map = {};
+  for (let i = 0; i < nums.length; i++) {
+    let complement = target - nums[i];
+    if (map[i] === complement) {
+    }
+    map[i] = complement;
+  }
+}
+
+console.log(twoSum2([2, 7, 11, 15], 9))

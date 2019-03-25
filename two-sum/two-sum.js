@@ -6,7 +6,6 @@
  * @param {number} target
  * @return {number[]}
  */
-console.time('计时器');
 var twoSum = function (nums, target) {
     for (var i = 0; i < nums.length; i++) {
         for (var j = i + 1; j < nums.length; j++) {
@@ -16,8 +15,16 @@ var twoSum = function (nums, target) {
         }
     }
 };
-console.timeEnd('计时器');
-twoSum([11, 15, 7, 2,], 9);
 var twoSum2 = function (nums, target) {
+    var map = {};
+    for (var i = 0; i < nums.length; i++) {
+        var complement = target - nums[i];
+        console.log(map[i] === complement);
+        if (map[i] === complement) {
+            console.log([map[i], nums[i]]);
+            // return [map[i],nums[i]]
+        }
+        map[i] = complement;
+    }
 };
-twoSum2([11, 15, 7, 2,], 9);
+console.log(twoSum2([2, 7, 11, 15], 9));
